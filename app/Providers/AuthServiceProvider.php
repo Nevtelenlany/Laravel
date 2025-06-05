@@ -15,6 +15,11 @@ use App\Policies\PermissionPolicy;
 use App\Policies\RolePolicy;
 use App\Policies\UserPolicy;
 use App\Models\Document;
+use App\Models\Worksheet;
+use App\Policies\WorksheetPolicy;
+use App\Models\SparePart;
+USE APP\Policies\SparePartPolicy;
+
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -25,7 +30,8 @@ class AuthServiceProvider extends ServiceProvider
         Device::class => DevicePolicy::class,
         DeviceType::class => DeviceTypePolicy::class,
         Document::class => DocumentPolicy::class,
-
+        Worksheet::class => WorksheetPolicy::class,
+        SparePart::class => SparePart::class,
       ];
 
     /**

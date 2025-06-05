@@ -29,4 +29,14 @@ return [
     'finish_date' => 'Befejezés dátuma',
     'updated_at' => 'Frissítve',
     'attachments' => 'Csatolt Fájlok',
+
+    'device' => 'Berendezés',
+    'part_number' => 'Cikkszám',
+    'stock_quantity' => 'Darabszám',
+    'unit_price' => 'Egységár',
+    'unit_price_with_currency' => 'Egységár (Ft)',
+
+    'spare_part' => 'Alkatrész',
+    'spare_parts' => 'Alkatrészek',
+
 ];

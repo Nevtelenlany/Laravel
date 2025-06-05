@@ -29,4 +29,14 @@ return [
     'finish_date' => 'Finish date',
     'updated_at' => 'Updated at',
     'attachments' => 'Attachments',
+
+    'device' => 'Device',
+    'part_number' => 'Part Number',
+    'stock_quantity' => 'Stock Quantity',
+    'unit_price' => 'Unit Price',
+    'unit_price_with_currency' => 'Unit Price (Ft)',
+
+    'spare_part' => 'Spare Part',
+    'spare_parts' => 'Spare Parts',
+
 ];
