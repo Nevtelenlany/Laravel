@@ -35,5 +35,9 @@ return [
     ],
     'widgets' => [
         'usersbyroles' => 'Users by roles',
+        'spare_part_stock' => 'Stock – Spare Parts',
+    ],
+    'fields' => [
+        'stock_quantity' => 'Quantity in Stock',
     ],
 ];

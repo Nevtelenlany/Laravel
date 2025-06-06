@@ -35,6 +35,10 @@ return [
     ],
     'widgets' => [
         'usersbyroles' => 'Felhasználók szerepkörök szerint',
+        'spare_part_stock' => 'Raktárkészlet – Pótalkatrészek',
     ],
 
+    'fields' => [
+        'stock_quantity' => 'Darabszám',
+    ],
 ];
