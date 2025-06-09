@@ -13,6 +13,8 @@ use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Contracts\View\View;
+use AmidEsfahani\FilamentTinyEditor\TinyEditor;
+
 
 class DeviceResource extends Resource
 {
@@ -67,8 +69,14 @@ class DeviceResource extends Resource
                             ->columnSpan('full'),
                         Forms\Components\TextInput::make('history')->label(__('fields.history'))
                             ->maxLength(255),
-                        Forms\Components\TextInput::make('note')->label(__('fields.note'))
-                            ->maxLength(255),
+                        TinyEditor::make('note')
+                            ->label(__('fields.note'))
+                            ->profile('simple') // vagy 'full', ha több eszközt akarsz
+                            ->fileAttachmentsDisk('public')
+                            ->fileAttachmentsDirectory('uploads')
+                            ->columnSpan('full')
+                            ->required(false),
+
                     ])
 
             ]);

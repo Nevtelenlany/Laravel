@@ -12,6 +12,8 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use AmidEsfahani\FilamentTinyEditor\TinyEditor;
+
 
 class SparePartResource extends Resource
 {
@@ -78,9 +80,14 @@ class SparePartResource extends Resource
                 ->required()
                 ->prefix('Ft'),
 
-            Forms\Components\Textarea::make('note')
-                ->label(__('fields.note'))
-                ->nullable(),
+            TinyEditor::make('note')
+    ->label(__('fields.note'))
+    ->profile('simple') // vagy 'full', ha sok funkciót szeretnél
+    ->fileAttachmentsDisk('public')
+    ->fileAttachmentsDirectory('uploads')
+    ->columnSpan('full')
+    ->required(false),
+
         ]);
     }
 

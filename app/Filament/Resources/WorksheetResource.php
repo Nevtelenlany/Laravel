@@ -16,6 +16,8 @@ use App\Enums\WorksheetPriority;
 use App\Models\User;
 use Filament\Forms\Components;
 use Illuminate\Support\Facades\Auth;
+use AmidEsfahani\FilamentTinyEditor\TinyEditor;
+
 
 
 class WorksheetResource extends Resource
@@ -72,10 +74,12 @@ public static function form(Form $form): Form
                 ->default('Normál')
                 ->required(),
 
-            Components\Textarea::make('description')
+            TinyEditor::make('description')
                 ->label(__('fields.description'))
+                ->profile('simple') // vagy 'full' ha extra funkciókat szeretnél
                 ->required()
-                ->maxLength(65535)
+                ->fileAttachmentsDisk('public')
+                ->fileAttachmentsDirectory('uploads')
                 ->columnSpanFull()
                 ->disabled(fn (?Worksheet $record) => $record && $isOperator),
 
@@ -105,10 +109,13 @@ public static function form(Form $form): Form
                 ->downloadable()
                 ->columnSpanFull(),
 
-            Components\Textarea::make('comment')
+            TinyEditor::make('comment')
                 ->label(__('fields.note'))
-                ->maxLength(65535)
-                ->columnSpanFull(),
+                ->profile('simple')
+                ->fileAttachmentsDisk('public')
+                ->fileAttachmentsDirectory('uploads')
+                ->columnSpanFull()
+                ->required(false),
         ]),
     ]);
 }
